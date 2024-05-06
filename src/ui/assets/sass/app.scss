@@ -1,0 +1,5 @@
+@import './variables/colors';
+.page {
+	display: flex;
+	background: rgb(var(--neutral_white));
+}
