@@ -1,6 +1,8 @@
 @import '../../assets/sass/variables/mixins';
 @import '../../assets/sass/variables/colors';
-
+.form-group {
+	overflow: hidden;
+}
 input {
 	border: solid 1px rgb(var(--grey_5));
 	border-radius: 5px;

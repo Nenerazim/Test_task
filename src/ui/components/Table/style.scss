@@ -178,7 +178,6 @@ td {
 }
 th,
 td {
-	overflow-x: hidden;
 	max-width: 20px;
 }
 @media (max-width: 768px) {
@@ -212,11 +211,13 @@ td {
 					color: rgb(var(--grey_60));
 					content: attr(data-text);
 				}
-
 				.form-group {
 					width: 100%;
 				}
 			}
 		}
 	}
+}
+.title {
+	overflow: hidden;
 }

@@ -82,7 +82,9 @@ function checkScreen() {
 							:class="{close: exportModel[index]}"
 							:style="mobile ? 'none' : `min-width: ${size.items[index]}px`"
 						>
-							{{ title }}
+							<div class="title">
+								{{ title }}
+							</div>
 							<div class="resize-handle" @mousedown="startResize($event, index)"></div>
 						</th>
 					</tr>

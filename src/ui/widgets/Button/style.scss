@@ -1,6 +1,7 @@
 @import '../../assets/sass/variables/mixins';
 @import '../../assets/sass/variables/colors';
 .button {
+	overflow: hidden;
 	display: flex;
 	&.default {
 		align-items: center;
@@ -24,12 +25,12 @@
 		border: solid 1px rgb(var(--grey_5));
 		border-radius: 5px;
 		height: 35px;
-		padding: 0 0 0 15px;
 		background: rgb(var(--neutral_white));
 		font-family: 'MyriadPro', sans-serif;
 		@include font16();
 		width: 100%;
 		.text {
+			padding-left: 15px;
 			white-space: nowrap;
 			overflow: hidden;
 		}
