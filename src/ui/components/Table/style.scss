@@ -1,0 +1,222 @@
+@import '../../assets/sass/variables/mixins';
+@import '../../assets/sass/variables/colors';
+
+$root: '.componentTable';
+#{$root} {
+	background: rgb(var(--neutral_white));
+	border-radius: 10px;
+	border: solid 1px rgb(var(--grey_50));
+	box-shadow: 0 5px 20px 0 var(--black-7);
+	@media (max-width: 768px) {
+		background: none;
+		box-shadow: none;
+		border: 0;
+	}
+
+	&-navbarTable {
+		width: 100%;
+		display: flex;
+		padding: 10px 15px;
+		justify-content: flex-end;
+		gap: 20px;
+		color: rgb(var(--grey_40));
+		@media (max-width: 768px) {
+			display: none;
+		}
+	}
+
+	&-sum,
+	&-all {
+		margin-left: auto;
+		margin-right: 15px;
+		width: 304px;
+		background: rgb(var(--neutral_grey));
+		border-radius: 5px;
+		display: flex;
+		gap: 15px;
+		padding: 15px;
+		@include font14();
+		border: solid 1px rgb(var(--grey_50));
+		@media (max-width: 396px) {
+			margin: 10px;
+			width: auto;
+		}
+
+		div {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+
+	&-sum {
+		margin-bottom: 5px;
+		flex-direction: column;
+	}
+
+	&-all {
+		justify-content: space-between;
+		margin-bottom: 15px;
+	}
+
+	.tableStart {
+		display: flex;
+		gap: 5px;
+	}
+	.tableContainer {
+		max-width: 100vh;
+		min-width: 100%;
+		overflow-x: auto;
+		@media (max-width: 396px) {
+			overflow-x: initial;
+		}
+	}
+	table {
+		border-collapse: collapse;
+		@media (max-width: 768px) {
+			display: flex;
+		}
+
+		thead tr th {
+			position: relative;
+			border: 1px solid rgb(var(--grey_50));
+			@media (max-width: 768px) {
+				display: none;
+				border: 0;
+			}
+		}
+	}
+
+	th:last-child {
+		border-right: 0;
+	}
+
+	th:first-child {
+		border-left: 0;
+	}
+}
+
+.del {
+	align-items: center;
+	cursor: pointer;
+	position: relative;
+}
+.delDropDown {
+	overflow: hidden;
+	margin: 5px 0 0 0;
+	color: rgb(var(--black_10));
+	background: rgb(var(--neutral_white));
+	z-index: 2;
+	width: 179px;
+	box-shadow:
+		0 0 3px 0 #000,
+		inset 0 1px 2px 0 rgba(255, 255, 255, 0.5);
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	position: absolute;
+	max-height: 0;
+	transition:
+		max-height 0.5s ease,
+		padding 0.5s ease;
+}
+
+.dropBrick {
+	color: rgb(var(--neutral_red));
+	padding: 0 10px;
+	@include font14();
+	cursor: pointer;
+	font-family: 'MyriadPro', sans-serif;
+}
+.show {
+	padding: 7px 0;
+	max-height: 30px;
+	overflow: hidden;
+	transition:
+		max-height 0.5s ease,
+		padding 0.5s ease;
+}
+.addNewLine {
+	border-radius: 10px;
+	background: rgb(var(--neutral_white));
+	border: solid 1px rgb(var(--grey_50));
+	box-shadow: 0 5px 20px 0 var(--black-7);
+	padding: 20px 25px;
+}
+.current {
+	border-radius: 5px;
+	border: 2px dashed rgb(var(--grey_50));
+	opacity: 0;
+}
+.close {
+	display: none;
+	padding: 0;
+	max-width: 0;
+	overflow: hidden;
+}
+th,
+td {
+	padding: 15px 10px;
+	white-space: nowrap;
+	-moz-text-overflow: ellipsis;
+	-ms-text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+}
+.resize-handle {
+	position: absolute;
+	top: 0;
+	right: -1px;
+	bottom: 0;
+	width: 1px;
+	cursor: col-resize;
+	z-index: 1;
+	&:hover {
+		background: rgb(var(--grey_50));
+		height: 1000px;
+	}
+}
+th,
+td {
+	overflow-x: hidden;
+	max-width: 20px;
+}
+@media (max-width: 768px) {
+	tbody {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		tr {
+			padding-top: 10px;
+			margin-bottom: 5px;
+			display: flex;
+			flex-direction: column;
+			background: rgb(var(--neutral_white));
+			border-radius: 10px;
+			border: solid 1px rgb(var(--grey_50));
+			box-shadow: 0 5px 20px 0 var(--black-7);
+
+			td {
+				display: flex;
+				width: 100%;
+				overflow-x: hidden;
+				overflow: initial;
+				max-width: 100%;
+				min-width: 100%;
+				position: relative;
+
+				&::before {
+					top: -2px;
+					position: absolute;
+					@include font10();
+					color: rgb(var(--grey_60));
+					content: attr(data-text);
+				}
+
+				.form-group {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

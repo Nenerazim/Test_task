@@ -1,0 +1,42 @@
+@import '../../assets/sass/variables/mixins';
+@import '../../assets/sass/variables/colors';
+
+.select {
+	width: 100%;
+	position: relative;
+
+	.isClose {
+		margin: 5px 0 0 0;
+		color: rgb(var(--black_10));
+		background: rgb(var(--neutral_white));
+		z-index: 2;
+		width: 100%;
+		box-shadow:
+			0 0 3px 0 #000,
+			inset 0 1px 2px 0 rgba(255, 255, 255, 0.5);
+		border-radius: 5px;
+		display: flex;
+		flex-direction: column;
+		gap: 14px;
+		position: absolute;
+		max-height: 0;
+		transition:
+			max-height 0.5s ease,
+			padding 0.5s ease;
+		overflow: hidden;
+		.dropBrick {
+			padding: 0 15px;
+			@include font14();
+			cursor: pointer;
+			font-family: 'MyriadPro', sans-serif;
+		}
+	}
+	.show {
+		padding: 7px 0;
+		max-height: 200px;
+		overflow: hidden;
+		transition:
+			max-height 1s ease,
+			padding 0.5s ease;
+	}
+}

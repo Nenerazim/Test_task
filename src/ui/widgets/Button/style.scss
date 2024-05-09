@@ -1,0 +1,52 @@
+@import '../../assets/sass/variables/mixins';
+@import '../../assets/sass/variables/colors';
+.button {
+	display: flex;
+	&.default {
+		align-items: center;
+		padding: 10px 15px 10px 10px;
+		background: rgb(var(--neutral_blue));
+		gap: 7px;
+		color: rgb(var(--neutral_white));
+		@include font14();
+		border-radius: 5px;
+		&:hover {
+			transition: 0.5s;
+			background: rgb(var(--blue_10));
+		}
+		&:active {
+			filter: brightness(80%);
+		}
+	}
+	&.select {
+		display: flex;
+		align-items: center;
+		border: solid 1px rgb(var(--grey_5));
+		border-radius: 5px;
+		height: 35px;
+		padding: 0 0 0 15px;
+		background: rgb(var(--neutral_white));
+		font-family: 'MyriadPro', sans-serif;
+		@include font16();
+		width: 100%;
+		.text {
+			white-space: nowrap;
+			overflow: hidden;
+		}
+		.box-mark {
+			border-radius: 0 4px 4px 0;
+			background: rgba(var(--white_10));
+			margin-left: auto;
+			padding: 13.5px 7px;
+			.mark {
+				border: 3px solid transparent;
+				border-left: 4px solid rgb(var(--grey_30));
+			}
+		}
+	}
+	&.none {
+		&:hover {
+			filter: brightness(80%);
+		}
+	}
+}

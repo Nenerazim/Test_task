@@ -1,27 +1,84 @@
-@import "../../assets/sass/variables/colors";
-@import "../../assets/sass/variables/mixins";
+@import '../../assets/sass/variables/colors';
+@import '../../assets/sass/variables/mixins';
 
 $root: '.navbarPage';
 #{$root} {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  &-container {
-    display: flex;
-    gap: 25px;
-    #{$root}-brick {
-      .router-link-exact-active {
-        color: rgb(var(--neutral_black));
-      }
-      a {
-        color: rgb(var(--blue_20));
-        @include font16(600)
-      }
-
-    }
-    .uiIcon {
-      margin-left: auto;
-      margin-right: 15px;
-    }
-  }
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	h1 {
+		gap: 25px;
+		display: flex;
+		align-items: start;
+		.uiIcon {
+			margin-top: 8px;
+		}
+	}
+	&-container {
+		position: relative;
+		display: flex;
+		gap: 25px;
+		#{$root}-brick {
+			.router-link-exact-active {
+				color: rgb(var(--neutral_black));
+			}
+			a {
+				color: rgb(var(--blue_20));
+				@include font16(600);
+			}
+		}
+		.uiIcon {
+			position: relative;
+			margin-left: auto;
+			margin-right: 15px;
+			transition: transform 1s ease;
+			transform: rotate(0deg);
+			@media (max-width: 396px) {
+				display: none;
+			}
+		}
+		.active {
+			transition: transform 1s ease;
+			transform: rotate(360deg);
+		}
+	}
+}
+.isClose {
+	top: 15px;
+	right: 15px;
+	margin: 5px 0 0 0;
+	color: rgb(var(--black_10));
+	background: rgb(var(--neutral_white));
+	z-index: 2;
+	width: 250px;
+	box-shadow:
+		0 0 3px 0 #000,
+		inset 0 1px 2px 0 rgba(255, 255, 255, 0.5);
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	position: absolute;
+	max-height: 0;
+	transition:
+		max-height 0.5s ease,
+		padding 0.5s ease;
+	overflow: hidden;
+	.dropBrick {
+		padding: 0 15px;
+		@include font14();
+		cursor: pointer;
+		font-family: 'MyriadPro', sans-serif;
+		input {
+			height: 11px;
+		}
+	}
+}
+.show {
+	padding: 7px 0;
+	max-height: 200px;
+	overflow: hidden;
+	transition:
+		max-height 1s ease,
+		padding 0.5s ease;
 }

@@ -1,0 +1,26 @@
+@import '../../assets/sass/variables/colors';
+
+$root: '.sidebar';
+#{$root} {
+	height: 100%;
+	position: fixed;
+	width: 229px;
+	text-align: start;
+	padding: 22px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	background: radial-gradient(circle at 29% 0, rgb(var(--neutral_black)), rgb(var(--grey_20)) 50%);
+	@media (max-width: 768px) {
+		display: none;
+	}
+	&_brick {
+		.router-link-exact-active {
+			color: rgb(var(--grey_10));
+		}
+		a {
+			color: rgb(var(--neutral_white));
+			font-family: 'MyriadPro', sans-serif;
+		}
+	}
+}

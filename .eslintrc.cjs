@@ -21,6 +21,7 @@ module.exports = {
 	rules: {
 		semi: ['error', 'always'],
 		'linebreak-style': ['error', 'unix'],
-		'vue/multi-word-component-names': 'off'
+		'vue/multi-word-component-names': 'off',
+		'vue/require-v-for-key': 'off'
 	}
 };

@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import Test from '@ui/components/Test/test.vue';
+import Table from '@ui/components/Table';
 </script>
+
 <template>
-	<div>
-		test page
-		<Test />
+	<div class="page-content">
+		<Table />
 	</div>
 </template>

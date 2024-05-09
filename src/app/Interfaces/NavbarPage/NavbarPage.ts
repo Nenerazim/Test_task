@@ -1,5 +1,7 @@
-import type {ISidebarItems} from '@app/Interfaces/Sidebar/Items';
-export interface ISidebar {
+import type {INavbarPageItems} from './Items';
+export interface INavbarPage {
 	title: string;
-	items: ISidebarItems[];
+	items: INavbarPageItems[];
+	models: number[];
+	settingsTitle: string[];
 }
