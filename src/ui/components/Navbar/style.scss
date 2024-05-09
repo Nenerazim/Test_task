@@ -1,0 +1,27 @@
+@import "../../assets/sass/variables/colors";
+@import "../../assets/sass/variables/mixins";
+
+$root: '.navbarPage';
+#{$root} {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  &-container {
+    display: flex;
+    gap: 25px;
+    #{$root}-brick {
+      .router-link-exact-active {
+        color: rgb(var(--neutral_black));
+      }
+      a {
+        color: rgb(var(--blue_20));
+        @include font16(600)
+      }
+
+    }
+    .uiIcon {
+      margin-left: auto;
+      margin-right: 15px;
+    }
+  }
+}
